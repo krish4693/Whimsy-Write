@@ -23,7 +23,7 @@ a{
 
 .container{
   min-height: 100vh;
-  background-color: var(--bg);
+  background-color: var(--bg
   color: var(--textColor);
 }
 
@@ -31,7 +31,6 @@ a{
    max-width: 1536px;
    margin-left:auto;
    margin-right:auto;
-   background-color: rebeccapurple;
    padding-left: 80px;
    padding-right: 80px;
 }
@@ -39,13 +38,11 @@ a{
 @media screen and (max-width:1536px) {
   .wrapper{
     max-width: 1366px;
-    background-color: red;
   }
 
   @media screen and (max-width:1280px) {
     .wrapper{
       max-width: 1024px;
-      background-color: green
     }
   
   }
@@ -53,7 +50,6 @@ a{
 @media screen and (max-width:1024px) {
   .wrapper{
     max-width: 768px;
-    background-color: blue;
     padding-left: 40px;
     padding-right: 40px;
   }
@@ -64,7 +60,6 @@ a{
 @media screen and (max-width:768px){
   .wrapper{
     max-width: 640px;
-    background-color: aquamarine;
   }
 }
 
@@ -72,7 +67,6 @@ a{
 @media screen and (max-width:640px){
   .wrapper{
     max-width: 475px;
-    background-color: orange;
   }
 }
 
