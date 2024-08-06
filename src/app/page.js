@@ -1,12 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/components/navbar/Navbar";
-import Footer from "@/components/footer/Footer";
+import Featured from "@/components/featured/Featured";
+import CategoryList from '@/components/categoryList/CategoryList'
+import styles from './homepage.module.css'
+import Pagination from '@/components/Pagination/Pagination'
+import CardList from "@/components/cardList/CardList";
 export default function Home() {
   return (
     <>
-        <Navbar/>
-        <Footer/>
+        <Featured/>
+        <CategoryList/>
+        <div className={styles.container}>
+            <CardList/>
+            <Pagination/>
+            
+        </div>
+        
     </>
   );
 }
