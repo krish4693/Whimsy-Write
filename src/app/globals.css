@@ -50,7 +50,7 @@ a{
    padding-right: 80px;
 }
 
-@media screen and (max-width:1536px) {
+@media screen and (max-width:1536px)  {
   .wrapper{
     max-width: 1366px;
   }
