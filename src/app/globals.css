@@ -35,10 +35,10 @@ a{
 }
 
 .light {
-  --bg: white;
-  --textColor: black;
-  --softBg: #f0f0f0;
-  --softTextColor: #626262;
+  --bg:white;
+  --textColor:black;
+  --softBg:#f0f0f0;
+  --softTextColor:#626262;
 }
 
 
