@@ -1,23 +1,5 @@
-/* cardList.module.css */
-.container {
-    padding: 20px;
-    background-color: var(--bg);
-    color: var(--textColor);
-  }
-  
-  .title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .posts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  /* card.module.css */
-  .card {
+/* card.module.css */
+.card {
     background-color: var(--softBg);
     color: var(--softTextColor);
     border-radius: 10px;
@@ -35,6 +17,8 @@
   .cardImage {
     border-radius: 10px;
     object-fit: cover;
+    width: 100%;
+    height: auto;
   }
   
   .cardTitle {
