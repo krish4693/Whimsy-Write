@@ -1,0 +1,89 @@
+.title {
+    margin: 50px 0px;
+    font-size: 40px;
+  }
+  
+  .cardImage {
+    display: flex;
+    border-radius: 50%;
+  }
+  
+  .card {
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    gap: 5px;
+    min-width: 227px;
+    min-height: 120px;
+    justify-content: center;
+    text-transform: capitalize;
+  }
+  
+  .categories {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: black;
+    gap: 10px;
+  }
+  
+  .fashion {
+    background-color: #ffe0e0; /* Light pink */
+  }
+  
+  .culture {
+    background-color: #e0ffe0; /* Light green */
+  }
+  
+  .food {
+    background-color: #e0e0ff; /* Light blue */
+  }
+  
+  .travel {
+    background-color: #fff0e0; /* Light orange */
+  }
+  
+  .coding {
+    background-color: #e0f7ff; /* Light cyan */
+    flex: 2;
+  }
+  
+  @media screen and (max-width: 640px) {
+    .categories {
+      /* display: flex;
+      justify-content: start; */
+    }
+  }
+
+  @media screen and (max-width:1280px) {
+    .categories{
+        display: flex;
+        justify-content: start;
+        gap: 10px 50px;
+    }
+  }
+
+  @media screen and (max-width:1024px) {
+    .categories{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .card{
+        min-width: 127px;
+    min-height: 70px;
+    }
+    .title{
+        font-size: 20px;
+    }
+    .cardTitle{
+        font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width:640px){
+    .title {
+        margin: 20px 0px;
+      }
+  }
+  

@@ -21,6 +21,8 @@ a{
   text-decoration: none;
 }
 
+
+
 .container{
   min-height: 100vh;
   background-color: var(--bg);
@@ -55,13 +57,14 @@ a{
     max-width: 1366px;
   }
 
-  @media screen and (max-width:1280px) {
-    .wrapper{
-      max-width: 1024px;
-    }
-  
-  }
 }
+@media screen and (max-width:1280px) {
+  .wrapper{
+    max-width: 1024px;
+  }
+
+}
+
 @media screen and (max-width:1024px) {
   .wrapper{
     max-width: 768px;
@@ -84,6 +87,8 @@ a{
     max-width: 475px;
   }
 }
+
+
 
 
 

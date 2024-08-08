@@ -7,50 +7,51 @@ const linklist = [
   {
     title: "fashion",
     imageLink: "/fashion.png",
-    href:'/fashion'
+    href: '/fashion',
+    className: styles.fashion
   },
   {
     title: "culture",
     imageLink: "/culture.png",
-    href:'/fashion'
-
+    href: '/culture',
+    className: styles.culture
   },
   {
     title: "food",
     imageLink: "/food.png",
-    href:'/fashion'
-
+    href: '/food',
+    className: styles.food
   },
   {
     title: "travel",
-    imageLink: "./travel.png",
-    href:'/fashion'
-
+    imageLink: "/travel.png",
+    href: '/travel',
+    className: styles.travel
   },
   {
-    title: "culture",
-    imageLink: "/culture.png",
-    href:'/fashion'
-
+    title: "coding",
+    imageLink: "/coding.png",
+    href: '/coding',
+    className: styles.coding
   },
 ];
 
 const Featured = () => {
   return (
     <div className={styles.container}>
-      <h1>Popular Categories</h1>
+      <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
         {linklist.map((item, index) => (
-          <Link href={`/blog?cat=${item.slug}`}  key={index}>
-            <div key={index}>
+          <Link href={item.href} key={index}>
+            <div className={`${styles.card} ${item.className}`}>
               <Image
                 src={item.imageLink}
                 alt={item.title}
-                className="card-image"
+                className={styles.cardImage}
                 width={32}
                 height={32}
               />
-              <h3 className="card-title">{item.title}</h3>
+              <h3 className={styles.cardTitle}>{item.title}</h3>
             </div>
           </Link>
         ))}
