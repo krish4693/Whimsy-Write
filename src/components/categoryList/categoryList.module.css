@@ -14,7 +14,7 @@
     align-items: center;
     gap: 5px;
     min-width: 227px;
-    min-height: 120px;
+    min-height: 100px;
     justify-content: center;
     text-transform: capitalize;
   }
