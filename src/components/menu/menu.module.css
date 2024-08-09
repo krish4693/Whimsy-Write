@@ -37,19 +37,19 @@
   object-fit: cover;
 }
 
-.category{
-padding: 3px 8px;
-border-radius: 10px;
-font-size: 12px;
-color: white;
-width: max-content; 
+.category {
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  color: white;
+  width: max-content;
 }
 
-.category.travel{
+.category.travel {
   background-color: #ff7857;
 }
-.postTitle{
+.postTitle {
   font-size: 18px;
   font-weight: 500;
   color: var(--softText);
-  }
+}
