@@ -1,20 +1,55 @@
 .container {
-    flex: 2;
-    margin-top: 60px;
-  }
-  
-  .subtitle {
-    color: gray;
-    font-size: 16px;
-    font-weight: 400;
-  }
-  .title {
-    font-size: 28px;
-  }
-  
-  
-  @media screen and (max-width: 1024px) {
-    .container {
-      display: none;
-    }
+  margin-top: 60px;
+  /* flex: 1; */
+}
+
+.subtitle {
+  color: gray;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.items {
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.imageContainer {
+  flex: 1;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+.textContainer {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.image {
+  border-radius: 50%;
+  border: 3px solid lightgray;
+  object-fit: cover;
+}
+
+.category{
+padding: 3px 8px;
+border-radius: 10px;
+font-size: 12px;
+color: white;
+width: max-content; 
+}
+
+.category.travel{
+  background-color: #ff7857;
+}
+.postTitle{
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--softText);
   }
