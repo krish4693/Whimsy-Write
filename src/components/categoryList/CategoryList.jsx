@@ -3,38 +3,38 @@ import styles from "./categoryList.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-const linklist = [
-  {
-    title: "fashion",
-    imageLink: "/fashion.png",
-    href: '/fashion',
-    className: styles.fashion
-  },
-  {
-    title: "culture",
-    imageLink: "/culture.png",
-    href: '/culture',
-    className: styles.culture
-  },
-  {
-    title: "food",
-    imageLink: "/food.png",
-    href: '/food',
-    className: styles.food
-  },
-  {
-    title: "travel",
-    imageLink: "/travel.png",
-    href: '/travel',
-    className: styles.travel
-  },
-  {
-    title: "coding",
-    imageLink: "/coding.png",
-    href: '/coding',
-    className: styles.coding
-  },
-];
+// const linklist = [
+//   {
+//     title: "fashion",
+//     imageLink: "/fashion.png",
+//     href: '/fashion',
+//     className: styles.fashion
+//   },
+//   {
+//     title: "culture",
+//     imageLink: "/culture.png",
+//     href: '/culture',
+//     className: styles.culture
+//   },
+//   {
+//     title: "food",
+//     imageLink: "/food.png",
+//     href: '/food',
+//     className: styles.food
+//   },
+//   {
+//     title: "travel",
+//     imageLink: "/travel.png",
+//     href: '/travel',
+//     className: styles.travel
+//   },
+//   {
+//     title: "coding",
+//     imageLink: "/coding.png",
+//     href: '/coding',
+//     className: styles.coding
+//   },
+// ];
 
   const getData= async () =>{
     const res=await fetch("http://localhost:3000/api/categories",{
@@ -55,7 +55,7 @@ const Featured = async() => {
       <div className={styles.categories}>
         {data?.map((item, index) => (
           <Link href={"/"+item.title} key={index}>
-            <div className={`${styles.card} ${styles[item.title]}`}>
+            <div className={`${styles.card} ${styles[item.slug]}`}>
               <Image
                 src={item.img}
                 alt={item.title}
