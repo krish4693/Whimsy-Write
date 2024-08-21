@@ -10,10 +10,10 @@ const Menu = () => {
     <div className={styles.container}>
       <h2 className={styles.subtitle}>{"What's hot"}</h2>
       <h1 className={styles.title}>Most Popular</h1>
-      <div className={styles.items}>
+      <div className={styles.items}>z
         <Link href="/" className={styles.item}>
           <div className={styles.imageContainer}>
-            <Image src="/p1.jpeg" alt="" fill className={styles.image}></Image>
+            <Image src="/p1.jpeg" alt="" fill className={styles.image} fill></Image>
           </div>
           <div className={styles.textContainer}>
             <span className={`${styles.category} ${styles.travel}` }>Travel</span>

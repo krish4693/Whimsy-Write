@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./writePage.module.css";
 import { useState, useEffect } from "react";
 import ReactQuill from "react-quill";
-import "react-quill/dist/quill.bubble.css";
+import "react-quill/dist/quill.snow.css"
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
@@ -14,7 +14,7 @@ const WritePage = () => {
   const router = useRouter();
   
   useEffect(() => {
-    if (status === "authenticated") {
+    if (status !== "authenticated") {
       router.push("/");
     }
   }, [status, router]); // Only run when status or router changes
