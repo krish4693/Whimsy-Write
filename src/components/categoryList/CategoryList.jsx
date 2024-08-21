@@ -36,16 +36,28 @@ const linklist = [
   },
 ];
 
-const Featured = () => {
+  const getData= async () =>{
+    const res=await fetch("http://localhost:3000/api/categories",{
+      cache:"no-store"
+    })
+    if(!res.ok){
+      throw new Error("Failed")
+    }
+    return res.json()
+  }
+
+
+const Featured = async() => {
+  const data=await getData()
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
-        {linklist.map((item, index) => (
-          <Link href={item.href} key={index}>
-            <div className={`${styles.card} ${item.className}`}>
+        {data?.map((item, index) => (
+          <Link href={"/"+item.title} key={index}>
+            <div className={`${styles.card} ${styles[item.title]}`}>
               <Image
-                src={item.imageLink}
+                src={item.img}
                 alt={item.title}
                 className={styles.cardImage}
                 width={32}
