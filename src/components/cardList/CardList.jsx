@@ -18,7 +18,7 @@ const getData= async (page) =>{
 
 const CardList =  async ({ page, cat }) => {
   // Dummy data
-  const posts = [
+  const posts1   = [
     {
       _id: "1",
       title: "Exploring the Mountains",
@@ -51,24 +51,25 @@ const CardList =  async ({ page, cat }) => {
 
   
 
-  const data=await getData(page)
-  const count = data.length;
-  console.log(count)
+  const {posts,totalPosts}=await getData(page)
+  // const count = data.length;
+  // const count = 5;
+  console.log("Count",totalPosts)
   const hasPrev = page > 1; // Can go to previous page if current page is greater than 1
-  const hasNext = (page * POST_PER_PAGE) < count; // Can go to next page if the total posts fetched is less than the total count
+  const hasNext = (page * POST_PER_PAGE) < totalPosts; // Can go to next page if the total posts fetched is less than the total count
   
   // const hasPrev=5
   // const hasNext=5
 
 
-  console.log("Hello",data)
+  console.log("Hello",posts)
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Recent Posts</h1>
       <div className={styles.posts}>
         {posts?.map((item) => (
-          <Card item={item} key={item._id} />
+          <Card item={item} key={item.id} />
         ))}
       </div>
       <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
