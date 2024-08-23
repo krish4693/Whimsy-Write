@@ -2,9 +2,10 @@ import prisma from "@/utils/connect"
 import { NextResponse } from "next/server"
 
 export const GET=async(req)=>{
-
+    console.log("Hello")
     const {searchParams}=new URL(req.url)
-    const page=searchParams.get("page")
+    let page=parseInt(searchParams.get("page"),10)~
+    console.log("Page ",page)
     const POST_PER_PAGE=4
 
     try {

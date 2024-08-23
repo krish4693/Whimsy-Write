@@ -51,16 +51,17 @@ const CardList =  async ({ page, cat }) => {
 
   
 
-  const data=await getData({page})
+  const data=await getData(page)
   const count = data.length;
   console.log(count)
-  const hasPrev = POST_PER_PAGE * (page - 1) > 0;
-  const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
+  const hasPrev = page > 1; // Can go to previous page if current page is greater than 1
+  const hasNext = (page * POST_PER_PAGE) < count; // Can go to next page if the total posts fetched is less than the total count
+  
   // const hasPrev=5
   // const hasNext=5
 
 
-  console.log(data)
+  console.log("Hello",data)
 
   return (
     <div className={styles.container}>
