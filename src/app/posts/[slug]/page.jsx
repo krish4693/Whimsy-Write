@@ -1,7 +1,8 @@
-import Menu from "@/components/Menu/Menu";
+import Menu from "@/components/menu/Menu";
 import styles from "./singlePage.module.css";
 import Image from "next/image";
-import Comments from "@/components/comments/Comments";
+import { NextDataPathnameNormalizer } from "next/dist/server/future/normalizers/request/next-data";
+// import Comments from "@/components/comments/Comments";
 
 const getData = async (slug) => {
   const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
@@ -19,6 +20,7 @@ const SinglePage = async ({ params }) => {
   const { slug } = params;
 
   const data = await getData(slug);
+  console.log(NextDataPathnameNormalizer)
 
   return (
     <div className={styles.container}>
@@ -26,7 +28,7 @@ const SinglePage = async ({ params }) => {
         <div className={styles.textContainer}>
           <h1 className={styles.title}>{data?.title}</h1>
           <div className={styles.user}>
-            {data?.user?.image && (
+            {data?.user?.img && (
               <div className={styles.userImageContainer}>
                 <Image src={data.user.image} alt="" fill className={styles.avatar} />
               </div>
@@ -50,7 +52,7 @@ const SinglePage = async ({ params }) => {
             dangerouslySetInnerHTML={{ __html: data?.desc }}
           />
           <div className={styles.comment}>
-            <Comments postSlug={slug}/>
+            {/* <Comments postSlug={slug}/> */}
           </div>
         </div>
         <Menu />

@@ -8,7 +8,8 @@ export const GET = async (req, { params }) => {
     const { slug } = params;
     try {
         const post = await prisma.Post.findUnique({
-            where: { slug }
+            where: { slug },
+            include:{user:true}
         })
         console.log(post)
 
