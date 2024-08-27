@@ -1,28 +1,13 @@
 import prisma from "@/utils/connect"
 import { NextResponse } from "next/server"
 
-export const GET = async (req) => {
+//GET SINGLE POST
+export const GET = async (req,{params}) => {
     // console.log("Hello")
-    const { searchParams } = new URL(req.url)
-    let page = parseInt(searchParams.get("page"), 10)
-    let cat = searchParams.get("cat")
-    console.log("category", cat)
-    // console.log("Page ",page)
-    const POST_PER_PAGE = 4
+  
 
     try {
-        if (cat == "" || cat === undefined) {
-            const totalPosts = await prisma.Post.count()
-            console.log("totalPosts", totalPosts)
-            const posts = await prisma.Post.findMany(
-                {
-                    take: POST_PER_PAGE,
-                    skip: POST_PER_PAGE * (page - 1),
-                   
-
-                }
-            )
-            // console.log(posts)
+        
             return new NextResponse(JSON.stringify({ posts, totalPosts }, { status: 200 }))
 
         }

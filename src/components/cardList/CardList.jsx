@@ -5,8 +5,8 @@ import Image from "next/image";
 import Card from "../Card/Card";
 
 
-const getData= async (page) =>{
-  const res=await fetch(` http://localhost:3000/api/posts?page=${page}`,{
+const getData= async (page,cat) =>{
+  const res=await fetch(` http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,{
     cache:"no-store"
   })
   if(!res.ok){
@@ -51,10 +51,10 @@ const CardList =  async ({ page, cat }) => {
 
   
 
-  const {posts,totalPosts}=await getData(page)
+  const {posts,totalPosts}=await getData(page,cat)
   // const count = data.length;
   // const count = 5;
-  console.log("Count",totalPosts)
+  // console.log("Count",totalPosts)
   const hasPrev = page > 1; // Can go to previous page if current page is greater than 1
   const hasNext = (page * POST_PER_PAGE) < totalPosts; // Can go to next page if the total posts fetched is less than the total count
   
@@ -62,7 +62,7 @@ const CardList =  async ({ page, cat }) => {
   // const hasNext=5
 
 
-  console.log("Hello",posts)
+  // console.log("Hello",posts)
 
   return (
     <div className={styles.container}>
@@ -72,7 +72,9 @@ const CardList =  async ({ page, cat }) => {
           <Card item={item} key={item.id} />
         ))}
       </div>
-      <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
+      {(!cat || cat === "") && (
+        <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} cat={cat} />
+      )}
     </div>
   );
 };

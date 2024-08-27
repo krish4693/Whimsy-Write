@@ -22,7 +22,7 @@ import Link from "next/link";
 //     href: '/food',
 //     className: styles.food
 //   },
-//   {
+//   {  
 //     title: "travel",
 //     imageLink: "/travel.png",
 //     href: '/travel',
@@ -54,7 +54,7 @@ const Featured = async() => {
       <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
         {data?.map((item, index) => (
-          <Link href={"/"+item.title} key={index}>
+          <Link href={`/blog?cat=${item.slug}`} key={index}>
             <div className={`${styles.card} ${styles[item.slug]}`}>
               <Image
                 src={item.img}
