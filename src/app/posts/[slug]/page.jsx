@@ -2,7 +2,7 @@ import Menu from "@/components/menu/Menu";
 import styles from "./singlePage.module.css";
 import Image from "next/image";
 import { NextDataPathnameNormalizer } from "next/dist/server/future/normalizers/request/next-data";
-// import Comments from "@/components/comments/Comments";
+import Comments from "@/components/comments/Comments";
 
 const getData = async (slug) => {
   const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
@@ -52,7 +52,7 @@ const SinglePage = async ({ params }) => {
             dangerouslySetInnerHTML={{ __html: data?.desc }}
           />
           <div className={styles.comment}>
-            {/* <Comments postSlug={slug}/> */}
+            <Comments postSlug={slug}/>
           </div>
         </div>
         <Menu />
