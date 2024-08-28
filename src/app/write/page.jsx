@@ -8,11 +8,12 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
 const WritePage = () => {
+  const [file, setFile] = useState(null)
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
   const { data, status } = useSession();
   const router = useRouter();
-  
+
   useEffect(() => {
     if (status !== "authenticated") {
       router.push("/");
@@ -25,15 +26,24 @@ const WritePage = () => {
 
   return (
     <div className={styles.container}>
-      <input type="text" placeholder="Title" className={styles.input}/>
+      <input type="text" placeholder="Title" className={styles.input} />
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
           <Image src="/plus.png" alt="Add" width={16} height={16} />
         </button>
         {open && (
           <div className={styles.add}>
+            <input
+              type="file"
+              id="image"
+              onChange={(e) => e.target.files[0]}
+              style={{ display: "none" }}
+            />
             <button className={styles.addButton}>
-              <Image src="/image.png" alt="Image" width={16} height={16} />
+              <label htmlFor="image">
+                <Image src="/image.png" alt="Image" width={16} height={16} />
+
+              </label>
             </button>
             <button className={styles.addButton}>
               <Image
