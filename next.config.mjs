@@ -7,7 +7,7 @@ const nextConfig = {
         hostname: 'via.placeholder.com',
       },
     ],
-    domains: ["lh3.googleusercontent.com"],
+    domains: ["lh3.googleusercontent.com","firebasestorage.googleapis.com"],
   },
 };
 

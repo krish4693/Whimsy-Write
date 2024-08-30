@@ -18,7 +18,7 @@ const Card = ({ item }) => {
           className={styles.cardImage}
         />
         <h2 className={styles.cardTitle}>{item.title}</h2>
-        <p className={styles.cardDescription}>{item.desc}</p>
+        {/* <p className={styles.cardDescription}>{item.desc}</p> */}
       </Link>
 
     </div>
