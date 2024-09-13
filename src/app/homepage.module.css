@@ -1,4 +1,20 @@
-.content{
+/* homepage.module.css */
+.container {
     display: flex;
-
-}
+    flex-direction: column;
+  }
+  
+  .content {
+    display: flex;
+    width: 100%;
+  }
+  
+  .cardList {
+    flex: 3;
+    /* Optional: Add padding or margin if needed */
+  }
+  
+  .menu {
+    flex: 1;
+    /* Optional: Add padding or margin if needed */
+  }

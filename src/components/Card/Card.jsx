@@ -16,6 +16,11 @@ const Card = ({ item }) => {
           width={400}
           height={300}
           className={styles.cardImage}
+          layout=""
+          style={{
+            width: '100%',
+            height: '400px',
+          }}
         />
         <h2 className={styles.cardTitle}>{item.title}</h2>
         {/* <p className={styles.cardDescription}>{item.desc}</p> */}

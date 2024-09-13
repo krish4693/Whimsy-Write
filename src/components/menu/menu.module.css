@@ -53,3 +53,8 @@
   font-weight: 500;
   color: var(--softText);
 }
+
+.detail{
+  display: flex;
+  flex-direction: column;
+}

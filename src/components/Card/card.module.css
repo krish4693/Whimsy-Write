@@ -17,8 +17,8 @@
   .cardImage {
     border-radius: 10px;
     object-fit: cover;
-    width: 100%;
-    height: auto;
+    width: 300px;
+    height: 200px;
   }
   
   .cardTitle {
