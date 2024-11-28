@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
 import styles from "./authLinks.module.css";
-import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
+import { useState } from "react";
+
 
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);

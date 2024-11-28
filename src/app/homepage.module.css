@@ -10,11 +10,9 @@
   }
   
   .cardList {
-    flex: 3;
-    /* Optional: Add padding or margin if needed */
+    flex: 4;
   }
   
   .menu {
     flex: 1;
-    /* Optional: Add padding or margin if needed */
   }
