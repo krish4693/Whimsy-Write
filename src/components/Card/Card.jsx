@@ -13,8 +13,8 @@ const Card = ({ item }) => {
         <Image
           src={imageUrl}
           alt={item.title}
-          width={400}
-          height={300}
+          width={30}
+          height={30}
           className={styles.cardImage}
           layout=""
           style={{

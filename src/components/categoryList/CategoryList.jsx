@@ -11,9 +11,8 @@ const getData = async () => {
   if (!res.ok) {
     throw new Error("Failed");
   }
-  const data=res.json()
-  console.log("Category Data just fetched",data)
-  return data
+
+  return res.json();
 };
 
 const CategoryList = async () => {
