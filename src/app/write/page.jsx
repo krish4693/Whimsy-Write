@@ -91,6 +91,7 @@ const WritePage = () => {
 
     if (res.status === 200) {
       const data = await res.json();
+      console.log("Data from succesfull creation of Post",data)
       router.push(`/posts/${data.slug}`);
     }
   };
