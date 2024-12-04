@@ -9,7 +9,7 @@ const Card = ({ item }) => {
 
   return (
     <div className={styles.card}>
-      <Link href={`/posts/${item.slug}`}>
+      <Link href={`/posts/${item.slug}`} className={styles.link}>
         <Image
           src={imageUrl}
           alt={item.title}
@@ -17,13 +17,12 @@ const Card = ({ item }) => {
           height={30}
           className={styles.cardImage}
           layout=""
-          style={{
-            width: '100%',
-            height: '400px',
-          }}
+
         />
-        <h2 className={styles.cardTitle}>{item.title}</h2>
-        {/* <p className={styles.cardDescription}>{item.desc}</p> */}
+        <div>
+          <h2 className={styles.cardTitle}>{item.title}</h2>
+          <div className={styles.cardDescription} dangerouslySetInnerHTML={{ __html: item?.desc.substring(0,60) }}/>
+        </div>
       </Link>
 
     </div>

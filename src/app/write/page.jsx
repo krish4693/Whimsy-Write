@@ -120,7 +120,11 @@ const WritePage = () => {
             <input
               type="file"
               id="image"
-              onChange={(e) => setFile(e.target.files[0])}
+              onChange={(e) => {
+                setFile(e.target.files[0]);
+                console.log("Here are the file i am looking for:",file)
+
+              }}
               style={{ display: "none" }}
             />
             <button className={styles.addButton}>

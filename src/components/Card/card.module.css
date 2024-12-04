@@ -33,3 +33,6 @@ card.module.css
     margin-top: 5px;
   }
   
+  .link{
+    display: flex;
+  }
