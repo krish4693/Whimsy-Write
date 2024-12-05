@@ -69,7 +69,7 @@ const CardList =  async ({ page, cat }) => {
       <h1 className={styles.title}>Recent Posts</h1>
       <div className={styles.posts}>
         {posts?.map((item) => (
-          <Card item={item} key={item.id} />
+          <Card item={item} key={item.id} className={styles.card} />
         ))}
       </div>
       {(!cat || cat === "") && (

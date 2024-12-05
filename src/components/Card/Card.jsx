@@ -14,7 +14,7 @@ const Card = ({ item }) => {
 
     const day = date.getDate();
     const year = date.getFullYear();
-    const month=date.getMonth()
+    const month = date.getMonth()
 
     // const months = [
     //   "January", "February", "March", "April", "May", "June",
@@ -37,16 +37,20 @@ const Card = ({ item }) => {
         <Image
           src={imageUrl}
           alt={item.title}
-          width={30}
-          height={30}
+          width={50}
+          height={50}
           className={styles.cardImage}
           layout=""
 
         />
-        <div>
-          <h2 className={styles.cardTitle}>{item.title}</h2>
-          <div className={styles.cardDescription} dangerouslySetInnerHTML={{ __html: item?.desc.substring(0, 60) }} />
-          <div>Published on {formatDate(item?.createdAt)}</div>
+        <div className={styles.seperation}>
+          <div >
+            <h2 className={styles.cardTitle}>{item.title}</h2>
+            <div className={styles.cardDescription} dangerouslySetInnerHTML={{ __html: item?.desc.substring(0, 200) }} />
+            ...
+          </div>
+
+          <div style={{marginBottom:"15px"}}>Published on {formatDate(item?.createdAt)}</div>
         </div>
       </Link>
 
