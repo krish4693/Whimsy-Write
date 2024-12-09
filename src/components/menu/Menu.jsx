@@ -13,7 +13,7 @@ const Menu = () => {
       <div className={styles.items}>
         <Link href="/" className={styles.item}>
           <div className={styles.imageContainer}>
-            <Image src="/p1.jpeg" alt="" fill className={styles.image} fill></Image>
+            <Image src="/p1.jpeg" alt="" fill className={styles.image}></Image>
           </div>
           <div className={styles.textContainer}>
             <span className={`${styles.category} ${styles.travel}` }>Travel</span>

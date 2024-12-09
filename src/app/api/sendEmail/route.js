@@ -14,7 +14,7 @@ export async function POST(req) {
     // Configure the Nodemailer transporter
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com", // Replace with your SMTP server
-      port: 587, // Port for TLS
+      port: 587, // Port for TLSd
       secure: false, // Use true for port 465, false for other ports
       auth: {
         user: process.env.EMAIL_USER, // Your email address (from .env file)
