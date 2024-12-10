@@ -15,7 +15,9 @@ const getData = async () => {
   return res.json();
 };
 
-const CategoryList = ({ data }) => {
+
+const CategoryList = async () => {
+  const data = await getData();
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>
@@ -42,13 +44,5 @@ const CategoryList = ({ data }) => {
     </div>
   );
 };
-
-// Fetch data server-side before rendering the page
-export async function getServerSideProps() {
-  const data = await getData();
-  return {
-    props: { data },
-  };
-}
 
 export default CategoryList;
