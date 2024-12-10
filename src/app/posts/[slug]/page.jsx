@@ -5,7 +5,7 @@ import { NextDataPathnameNormalizer } from "next/dist/server/future/normalizers/
 import Comments from "@/components/comments/Comments";
 
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/${slug}`, {
     cache: "no-store",
   });
 
@@ -15,6 +15,7 @@ const getData = async (slug) => {
 
   return res.json();
 };
+
 
 const SinglePage = async ({ params }) => {
   const { slug } = params;
