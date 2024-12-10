@@ -4,21 +4,35 @@ import Pagination from "../Pagination/Pagination";
 import Image from "next/image";
 import Card from "../Card/Card";
 
-
 const getData = async (page, cat) => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/posts?page=${page}&cat=${cat || ""}`,
-    {
-      cache: "no-store",
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/posts?page=${page}&cat=${cat || ""}`,
+      {
+        cache: "no-store",
+      }
+    );
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch posts");
     }
-  );
 
-  if (!res.ok) {
-    throw new Error("Failed");
+    const data = await res.json();
+
+    // Check if the data is valid, if not, return an empty object or default values
+    if (!data || typeof data !== 'object' || !Array.isArray(data.posts)) {
+      console.error("Invalid response format:", data);
+      return { posts: [], totalPosts: 0 }; // Return default values in case of invalid data
+    }
+
+    return data;
+
+  } catch (error) {
+    console.error("Error fetching data:", error.message);
+    return { posts: [], totalPosts: 0 }; // Return default values in case of an error
   }
-
-  return res.json();
 };
+
 
 
 
@@ -75,7 +89,7 @@ const CardList =  async ({ page, cat }) => {
       <h1 className={styles.title}>Recent Posts</h1>
       <div className={styles.posts}>
         {posts?.map((item) => (
-          <Card item={item} key={item.id} className={styles.card} />
+          <Card item={item} key={item._id} className={styles.card} />
         ))}
       </div>
       {(!cat || cat === "") && (

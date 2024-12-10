@@ -4,16 +4,22 @@ import Link from "next/link";
 import Image from "next/image";
 
 const getData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/categories`, {
-    cache: "no-store",
-  });
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/categories`, {
+      cache: "no-store",
+    });
 
-  if (!res.ok) {
-    throw new Error("Failed");
+    if (!res.ok) {
+      throw new Error("Failed to fetch categories");
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return []; // Return an empty array in case of error
   }
-
-  return res.json();
 };
+
 
 
 const CategoryList = async () => {
