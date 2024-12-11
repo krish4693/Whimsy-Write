@@ -4,35 +4,26 @@ import Pagination from "../Pagination/Pagination";
 import Image from "next/image";
 import Card from "../Card/Card";
 
+
 const getData = async (page, cat) => {
-  try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/posts?page=${page}&cat=${cat || ""}`,
-      {
-        cache: "no-store",
-      }
-    );
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch posts");
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/posts?page=${page}&cat=${cat || ""}`,
+    {
+      cache: "no-store",
     }
-
-    const data = await res.json();
-
-    // Check if the data is valid, if not, return an empty object or default values
-    if (!data || typeof data !== 'object' || !Array.isArray(data.posts)) {
-      console.error("Invalid response format:", data);
-      return { posts: [], totalPosts: 0 }; // Return default values in case of invalid data
-    }
-
-    return data;
-
-  } catch (error) {
-    console.error("Error fetching data:", error.message);
-    return { posts: [], totalPosts: 0 }; // Return default values in case of an error
+  );
+  let data= await res.json()
+  if (data===null){
+    return []
   }
-};
+  console.log("Response------------------>",data)
 
+  if (!res.ok) {
+    throw new Error("Failed");
+  }
+  
+  return data;
+};
 
 
 
